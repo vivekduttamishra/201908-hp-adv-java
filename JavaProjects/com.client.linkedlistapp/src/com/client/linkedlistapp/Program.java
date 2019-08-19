@@ -9,23 +9,27 @@ public class Program {
 		
 		LinkedList list=new LinkedList();
 		
-		testGetAllSpeed(list);
+		//testGetAllSpeed(list);
+		testAdd(list);
+		
+		testRemove(list);
+		
+		//testGet(list);
+		
+		//list.get(50);
+		
+		//testSet(list);
 		
 		
-//		testAdd(list);
-//		
-//		testGet(list);
-//		
-//		testSet(list);
-//		//2 1 4 3
-//		testRemove(list);
+		//2 1 4 3
+		
 	}
 
 	private static void testGetAllSpeed(LinkedList list) {
 		// TODO Auto-generated method stub
 		System.out.println("testing time taken...");
 		long start=System.currentTimeMillis();
-		for(int i=0;i<1000000;i++)
+		for(int i=0;i<500000;i++)
 			list.add(i);
 		
 		long end=System.currentTimeMillis();
@@ -41,8 +45,7 @@ public class Program {
 
 	private static void testRemove(LinkedList list) {
 		list.remove(2); //should remove 4 
-		list.remove(0); //should remove 2
-		list.remove(1); //should remove 3
+		
 		
 		System.out.println("after remove :"+ list);
 	}
@@ -61,8 +64,9 @@ public class Program {
 		int sum=0;
 		
 		for(int i=0;i<list.size();i++) {
-			sum+=list.get(i);
-			
+			int value=list.get(i);
+			sum+=value;
+			System.out.println(value);
 		}
 		System.out.println("sum is "+sum);
 	}
