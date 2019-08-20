@@ -1,11 +1,11 @@
 package in.conceptarchitect.util.collection;
 
-import in.conceptarchitect.util.collection.AbstractLinkedList.Node;
+import in.conceptarchitect.util.collection.AbstractIntLinkedList.Node;
 
-public class LinkedList extends AbstractLinkedList{
+public class IntLinkedList extends AbstractIntLinkedList{
 
 	@Override
-	public AbstractLinkedList add(int value) {
+	public AbstractIntLinkedList add(int value) {
 		// TODO Auto-generated method stub
 		Node newNode=new Node();
 		newNode.value=value;

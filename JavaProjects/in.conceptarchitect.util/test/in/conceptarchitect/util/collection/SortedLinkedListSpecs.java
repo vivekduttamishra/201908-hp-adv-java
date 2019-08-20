@@ -9,18 +9,18 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 public class SortedLinkedListSpecs {
-	SortedLinkedList list;
+	SortedIntLinkedList list;
 	int initialSize;
 	
 	@Before  //this code executes before every test
 	public void arrange() {
-		list=new SortedLinkedList();
+		list=new SortedIntLinkedList();
 
 	}
 	
 	@Test
 	public void type_SortedLinkedListIsATypeOfAbstractLinkedList() {
-		assertTrue( list instanceof AbstractLinkedList);
+		assertTrue( list instanceof AbstractIntLinkedList);
 	}
 	
 	@Test

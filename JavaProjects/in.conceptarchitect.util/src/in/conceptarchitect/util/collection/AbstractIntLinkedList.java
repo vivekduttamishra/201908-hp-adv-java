@@ -1,6 +1,6 @@
 package in.conceptarchitect.util.collection;
 
-public abstract class AbstractLinkedList {
+public abstract class AbstractIntLinkedList {
 	class Node {
 	
 		public int value;
@@ -21,7 +21,7 @@ public abstract class AbstractLinkedList {
 		
 	}
 	
-	public abstract AbstractLinkedList add(int value);
+	public abstract AbstractIntLinkedList add(int value);
 	
 	
 	public String toString() {

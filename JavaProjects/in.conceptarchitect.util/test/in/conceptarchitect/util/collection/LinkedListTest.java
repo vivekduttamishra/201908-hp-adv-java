@@ -6,12 +6,12 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class LinkedListTest {
-	LinkedList list;
+	IntLinkedList list;
 	int initialSize;
 	
 	@Before  //this code executes before every test
 	public void arrange() {
-		list=new LinkedList();
+		list=new IntLinkedList();
 //		list.add(10);
 //		list.add(20);
 //		list.add(30);
@@ -30,7 +30,7 @@ public class LinkedListTest {
 	
 	@Test	
 	public void new_listIsEmpty() {
-		LinkedList list=new LinkedList();
+		IntLinkedList list=new IntLinkedList();
 		//System.out.println("new_listIsEmpty called");
 		assertEquals(0, list.size());
 	}
@@ -41,7 +41,7 @@ public class LinkedListTest {
 	@Test
 	public void add_toEmptyListAddsAtTheBegining() {
 		//A --- Arrange ---> prepare to test
-		LinkedList list=new LinkedList();
+		IntLinkedList list=new IntLinkedList();
 		//A --- Act	--> perform the required action that is being tested	
 		list.add(1);
 		//A ---> Assert that expectations are met	
@@ -51,7 +51,7 @@ public class LinkedListTest {
 	}
 	@Test
 	public void add_toNonEmptyListAddsAtTheEnd() {
-		LinkedList list=new LinkedList();
+		IntLinkedList list=new IntLinkedList();
 		list.add(2);
 		list.add(5);
 		//assertEquals(5, list.get(1));
@@ -75,7 +75,7 @@ public class LinkedListTest {
 	
 	@Test
 	public void get_returnsValueForValidIndex() {
-		LinkedList list=new LinkedList();
+		IntLinkedList list=new IntLinkedList();
 		list.add(10);
 		list.add(20);
 		list.add(30);
@@ -165,7 +165,7 @@ public class LinkedListTest {
 	
 	//@Test
 	public void toString_returnsSpecificStringForEmptyList() {
-		LinkedList list=new LinkedList();
+		IntLinkedList list=new IntLinkedList();
 		
 		assertEquals("LinkedList(\t)",list.toString());
 		

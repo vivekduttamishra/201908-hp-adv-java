@@ -31,6 +31,7 @@ public class FixedStackTest {
 	}
 	
 	public void bestPractice_shouldSpecifyObjectTypeIfYouNeed() {
+		
 		FixedStack<Object> stack=new FixedStack<>(3);
 		
 		stack.push(20);
@@ -40,7 +41,7 @@ public class FixedStackTest {
 	}
 	
 	@Test
-	public void bestPractice_shouldSpecifyObjectTypeIfYouNeed() {
+	public void new_primitiveStackType() {
 		//FixedStack<int> stack=new FixedStack<>(3);
 		FixedStack<Integer> stack=new FixedStack<>(3);
 		

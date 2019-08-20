@@ -1,9 +1,9 @@
 package in.conceptarchitect.util.collection;
 
-public class SortedLinkedList extends AbstractLinkedList {
+public class SortedIntLinkedList extends AbstractIntLinkedList {
 
 	@Override
-	public AbstractLinkedList add(int value) {
+	public AbstractIntLinkedList add(int value) {
 		// TODO Auto-generated method stub
 		Node newNode=new Node();
 		newNode.value=value;
