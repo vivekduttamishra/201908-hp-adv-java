@@ -1,16 +1,14 @@
 package in.conceptarchitect.util.collection;
 
-public class FixedStack<X> {
+public class FixedObjectStack {
 	//boolean empty=true;
 	int top=0;
 	//int size;
-	X values[]; //creatijng a
-	public FixedStack(int size) {
+	Object values[];
+	public FixedObjectStack(int size) {
 		// TODO Auto-generated constructor stub
 		//this.size=size;
-		//values= new X[size]; //java doesn't allow to create generic array
-		
-		values=(X[]) new Object[size]; //hack solution
+		values=new Object[size];
 	}
 
 	public boolean isEmpty() {
@@ -18,7 +16,7 @@ public class FixedStack<X> {
 		return top==0;
 	}
 
-	public void push(X i) {
+	public void push(Object i) {
 		// TODO Auto-generated method stub
 		//empty=false;
 		if(isFull())
@@ -33,7 +31,7 @@ public class FixedStack<X> {
 		return top>=values.length;
 	}
 
-	public X pop() {
+	public Object pop() {
 		// TODO Auto-generated method stub
 		if(isEmpty())
 			throw new StackUnderFlowException();

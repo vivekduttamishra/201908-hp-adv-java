@@ -1,13 +1,13 @@
 package com.client.linkedlistapp;
 
-import in.conceptarchitect.util.collection.LinkedList;
+import in.conceptarchitect.util.collection.HybridLinkedList;
 
 public class Program {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		LinkedList list=new LinkedList();
+		HybridLinkedList list=new HybridLinkedList();
 		
 		//testGetAllSpeed(list);
 		testAdd(list);
@@ -25,7 +25,7 @@ public class Program {
 		
 	}
 
-	private static void testGetAllSpeed(LinkedList list) {
+	private static void testGetAllSpeed(HybridLinkedList list) {
 		// TODO Auto-generated method stub
 		System.out.println("testing time taken...");
 		long start=System.currentTimeMillis();
@@ -43,14 +43,14 @@ public class Program {
 		System.out.println("Total time taken is "+(end2-end)+" ms");
 	}
 
-	private static void testRemove(LinkedList list) {
+	private static void testRemove(HybridLinkedList list) {
 		list.remove(2); //should remove 4 
 		
 		
 		System.out.println("after remove :"+ list);
 	}
 
-	private static void testSet(LinkedList list) {
+	private static void testSet(HybridLinkedList list) {
 		// TODO Auto-generated method stub
 		
 		list.set(0, 20);
@@ -60,7 +60,7 @@ public class Program {
 		
 	}
 
-	private static void testGet(LinkedList list) {
+	private static void testGet(HybridLinkedList list) {
 		int sum=0;
 		
 		for(int i=0;i<list.size();i++) {
@@ -71,7 +71,7 @@ public class Program {
 		System.out.println("sum is "+sum);
 	}
 
-	private static void testAdd(LinkedList list) {
+	private static void testAdd(HybridLinkedList list) {
 		list.add(2);
 		list.add(1);
 		list.add(4);
