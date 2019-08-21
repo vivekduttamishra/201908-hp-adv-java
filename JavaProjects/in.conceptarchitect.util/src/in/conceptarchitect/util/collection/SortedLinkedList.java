@@ -26,7 +26,8 @@ public class SortedLinkedList<T> extends AbstractLinkedList<T> {
 			//while(n!=null && n.value<=value)    // n.value - value <=0
 			//while(n!=null && n.value.compareTo(value)<=0)
 			while(n!=null &&
-					comparer.compare(n.value,value)<=0 
+					//comparer.compare(n.value,value)<=0
+					comparer.le(n.value,value)
 					)
 				n=n.next;
 			

@@ -27,7 +27,7 @@ public class ListSearchSpecs {
 	@Test
 	public void canSearchBooksByAuthor() {
 		//find all books by Ramdhari Singh Dinkar
-		LinkedList<Book> result=null; //do search here
+		LinkedList<Book> result= books.search(b-> b.getAuthor().equals("Ramdhari Singh Dinkar"));
 		
 		assertEquals(2, result.size());
 		assertEquals("Rashmirathi", result.get(0).getTitle());
@@ -38,9 +38,9 @@ public class ListSearchSpecs {
 	@Test
 	public void canSearchBooksOnPriceRange() {
 		//find all books in price range 100-300
-		LinkedList<Book> result=null; //do search here
+		LinkedList<Book> result=books.search(b-> b.getPrice()>=100 && b.getPrice()<=300);
 		
-		assertEquals(2, result.size());
+		assertEquals(4, result.size());
 		
 		
 		
@@ -49,7 +49,7 @@ public class ListSearchSpecs {
 	@Test
 	public void returnsEmptyListForNotFound() {
 		//find book titled The Accursed God
-		LinkedList<Book> result=null; //do search here
+		LinkedList<Book> result=books.search(b->b.getTitle().equals("The Accursed God"));
 		
 		assertEquals(0, result.size());
 		

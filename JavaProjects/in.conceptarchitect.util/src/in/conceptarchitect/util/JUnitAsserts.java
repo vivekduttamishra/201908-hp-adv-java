@@ -12,6 +12,15 @@ public class JUnitAsserts {
 			assertEquals("Sequence Mismatch at Index "+i,expected[i],list.get(i));
 	}
 	
+	public static <T> void assertSequenceEquals(IndexedList<T> original, IndexedList<T> other) {
+		
+		assertEquals("Sequences Differ in Size", original.size(), other.size() );
+		
+		for(int i=0;i<original.size();i++)
+			assertEquals("Error at Index "+i, original.get(i),other.get(i));
+	}
+	
+	
 	public static <T> void assertContainsAll(IndexedList<T> list, T ...expected) {
 		for(T value: expected){
 			if(list.indexOf(value)==-1)

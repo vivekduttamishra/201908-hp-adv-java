@@ -60,19 +60,31 @@ public interface IndexedList<E> {
 		return true;
 	}
 	
-	default LinkedList<E> search(){
+	default LinkedList<E > search(Condition<E> condition){
 		
 		LinkedList<E> result=new LinkedList<>();
 		
 		//search the list for matching items
+		for(int i=0;i<size();i++) {
+			
+			E value=get(i);
+			if(condition.isTrue(value))
+				result.add(value);
 		
+			
+		}
 		
 		return result;
 		
-		
 	}
 	
-	
+	default void execute(Action<E> action) {
+		
+		for(int i=0;i<size();i++) {
+			E value=get(i);
+			action.perform(value);
+		}
+	}
 	
 	
 	static <T> LinkedList<T> createLinkedList(T...values){
