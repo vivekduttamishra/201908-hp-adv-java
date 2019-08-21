@@ -1,4 +1,7 @@
-package in.conceptarchitect.util.collection;
+package in.conceptarchitect.util.collection.primitives;
+
+import in.conceptarchitect.util.collection.StackOverFlowException;
+import in.conceptarchitect.util.collection.StackUnderFlowException;
 
 public class FixedIntStack {
 	//boolean empty=true;

@@ -1,6 +1,6 @@
 package com.client.linkedlistapp;
 
-import in.conceptarchitect.util.collection.HybridLinkedList;
+import in.conceptarchitect.util.collection.primitives.HybridLinkedList;
 
 public class Program {
 

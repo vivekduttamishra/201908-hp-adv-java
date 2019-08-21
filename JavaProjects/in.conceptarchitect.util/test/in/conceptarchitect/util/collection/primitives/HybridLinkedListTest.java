@@ -1,9 +1,11 @@
-package in.conceptarchitect.util.collection;
+package in.conceptarchitect.util.collection.primitives;
 
 import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import in.conceptarchitect.util.collection.primitives.HybridLinkedList;
 
 public class HybridLinkedListTest {
 	HybridLinkedList list;

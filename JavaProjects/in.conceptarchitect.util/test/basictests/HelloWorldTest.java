@@ -1,4 +1,4 @@
-package tests.utils.collection;
+package basictests;
 
 import org.junit.Test;
 

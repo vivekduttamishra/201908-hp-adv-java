@@ -1,6 +1,6 @@
-package in.conceptarchitect.util.collection;
+package in.conceptarchitect.util.collection.primitives;
 
-import in.conceptarchitect.util.collection.AbstractIntLinkedList.Node;
+import in.conceptarchitect.util.collection.primitives.AbstractIntLinkedList.Node;
 
 public class IntLinkedList extends AbstractIntLinkedList{
 

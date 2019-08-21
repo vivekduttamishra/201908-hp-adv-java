@@ -1,4 +1,4 @@
-package in.conceptarchitect.util.collection;
+package in.conceptarchitect.util.collection.primitives;
 
 public class HybridLinkedList {
 	class Node {

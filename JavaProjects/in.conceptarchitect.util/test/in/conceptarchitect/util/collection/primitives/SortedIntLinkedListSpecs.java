@@ -1,4 +1,4 @@
-package in.conceptarchitect.util.collection;
+package in.conceptarchitect.util.collection.primitives;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -8,7 +8,10 @@ import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
-public class SortedLinkedListSpecs {
+import in.conceptarchitect.util.collection.primitives.AbstractIntLinkedList;
+import in.conceptarchitect.util.collection.primitives.SortedIntLinkedList;
+
+public class SortedIntLinkedListSpecs {
 	SortedIntLinkedList list;
 	int initialSize;
 	

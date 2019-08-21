@@ -1,4 +1,4 @@
-package tests.utils.collection;
+package basictests;
 
 public class SimpleMath {
 

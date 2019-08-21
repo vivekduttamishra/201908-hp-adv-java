@@ -1,11 +1,13 @@
-package in.conceptarchitect.util.collection;
+package in.conceptarchitect.util.collection.primitives;
 
 import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
 
-public class LinkedListTest {
+import in.conceptarchitect.util.collection.primitives.IntLinkedList;
+
+public class IntLinkedListTest {
 	IntLinkedList list;
 	int initialSize;
 	

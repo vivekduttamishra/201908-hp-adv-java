@@ -1,4 +1,4 @@
-package in.conceptarchitect.util.collection;
+package in.conceptarchitect.util.collection.primitives;
 
 import static org.junit.Assert.*;
 import static org.junit.Assume.assumeTrue;
@@ -7,13 +7,18 @@ import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
-public class FixedStringStackTests {
+import in.conceptarchitect.util.collection.StackOverFlowException;
+import in.conceptarchitect.util.collection.StackUnderFlowException;
+import in.conceptarchitect.util.collection.primitives.FixedStringStack;
 
-	FixedIntStack stack;
+public class FixedStringStackSpecs {
+
+	FixedStringStack stack;
 	int size=3;
+	
 	@Before
 	public void setup() {
-		stack=new FixedIntStack(3);
+		stack=new FixedStringStack(size);
 	}
 	
 	@Test
@@ -40,7 +45,7 @@ public class FixedStringStackTests {
 	public void push_makesTheStackNonEmpty() {
 		
 		
-		stack.push(10);
+		stack.push("india");
 		
 		assertFalse(stack.isEmpty());
 	}
@@ -48,17 +53,17 @@ public class FixedStringStackTests {
 	@Test
 	public void push_itemsLessThanStackSizeReturnsFalseForIsFull() {
 		
-		stack.push(1);
-		stack.push(2);
+		stack.push("india");
+		stack.push("usa");
 		assertFalse(stack.isFull());
 	}
 	
 	@Test
 	public void push_itemsEqualsToStackSizeMakesItFull() {
 		
-		stack.push(1);
-		stack.push(2);
-		stack.push(3);
+		stack.push("india");
+		stack.push("usa");
+		stack.push("france");
 		
 		assertTrue(stack.isFull());
 	}
@@ -66,27 +71,27 @@ public class FixedStringStackTests {
 	@Test(expected = StackOverFlowException.class)
 	public void push_toAFullStackThrowsStackOverFlowException() {
 		
-		stack.push(1);
-		stack.push(2);
-		stack.push(3);
+		stack.push("india");
+		stack.push("usa");
+		stack.push("france");
 		//now stack should be full
 		
 		//next push should throw exception
-		stack.push(3);
+		stack.push("france");
 	}
 	
-	@Test
+	@Ignore @Test
 	public void push_toFullStackThrowsExceptionWithValue() {
-		stack.push(1);
-		stack.push(2);
-		stack.push(3);
+		stack.push("india");
+		stack.push("usa");
+		stack.push("france");
 		assumeTrue(stack.isFull());
 		
 		try {
-			stack.push(5);
+			stack.push("japan");
 			fail("exception was not thrown");
 		}catch(StackOverFlowException ex) {
-			assertEquals(5, ex.getValue());
+			assertEquals("japan", ex.getValue());
 		}
 	}
 	
@@ -97,8 +102,8 @@ public class FixedStringStackTests {
 	
 	@Test
 	public void pop_lastItemFromStackMakesItEmpty() {
-		stack.push(1);
-		stack.push(2);
+		stack.push("india");
+		stack.push("usa");
 		stack.pop();
 		assertFalse(stack.isEmpty());
 		
@@ -108,10 +113,10 @@ public class FixedStringStackTests {
 	
 	@Test
 	public void pop_fromAFullStackMakesItNonFull() {
-		FixedIntStack stack=new FixedIntStack(3);
-		stack.push(1);
-		stack.push(2);
-		stack.push(3);
+		
+		stack.push("india");
+		stack.push("usa");
+		stack.push("france");
 		//at this stage. stack should be full
 		//assertTrue(stack.isFull());
 		assumeTrue(stack.isFull());
@@ -124,33 +129,14 @@ public class FixedStringStackTests {
 	@Test
 	public void pop_popsLIFO(){
 		
-		int items[]= {5,9,4};
+		String items[]= {"japan","germany","hongkong"};
 		
-		for(int item:items)
+		for(String item:items)
 			stack.push(item);
 		
 		for(int i=size-1;i>=0;i--)
 			assertEquals(items[i], stack.pop());
 		
-	}
-	
-	
-	@Test
-	public void type_StackUnderFlowExceptionIsAStackException() {
-		StackUnderFlowException ex=new StackUnderFlowException();
-		assertTrue(ex instanceof StackException);
-	}
-	
-	@Test
-	public void type_StackOverFlowExceptionIsAStackException() {
-		StackOverFlowException ex=new StackOverFlowException(0);
-		assertTrue(ex instanceof StackException);
-	}
-	
-	 @Test
-	public void type_StackExceptionIsARuntimeException() {
-		StackException ex=new StackException("stack exception");
-		assertTrue(ex instanceof RuntimeException);
 	}
 	
 	
