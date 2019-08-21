@@ -37,6 +37,9 @@ public interface IndexedList<E> {
 		return false;
 	}
 	
+	
+	
+	
 	default boolean containsAll(IndexedList<E> other) {
 		for(int i=0;i<other.size();i++) {
 			if(indexOf(other.get(i))==-1)
@@ -44,17 +47,33 @@ public interface IndexedList<E> {
 		}
 		return true;
 	}
-	/*
-	default boolean isSorted() {
+	
+	default boolean isSorted(Comparator<E> c) {
 		if(size()<2)
 			return true;
 		
 		for(int i=2;i<size();i++) {
-			if(get(i)<get(i-1))
+			if(c.compare(get(i), get(i-1))<0)
 				return false;
 		}
-		reutrn true;
-	}*/
+		
+		return true;
+	}
+	
+	default LinkedList<E> search(){
+		
+		LinkedList<E> result=new LinkedList<>();
+		
+		//search the list for matching items
+		
+		
+		return result;
+		
+		
+	}
+	
+	
+	
 	
 	static <T> LinkedList<T> createLinkedList(T...values){
 		LinkedList<T> list=new LinkedList<T>();
@@ -69,5 +88,12 @@ public interface IndexedList<E> {
 			array.add(value);
 		return array;
 	}
+	
+	
+	
+	
+	
+	
+	
 	
 }
