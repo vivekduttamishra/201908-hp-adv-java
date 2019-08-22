@@ -1,9 +1,30 @@
 package in.conceptarchitect.util.collection;
 
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+
 import in.conceptarchitect.util.Action;
 import in.conceptarchitect.util.Condition;
 
-public interface IndexedList<E> {
+public interface IndexedList<E> extends Iterable<E>{
+	
+			
+
+	int size();
+
+	IndexedList<E> add(E value);
+
+	E get(int index);
+
+	IndexedList<E> set(int index, E value);
+	
+	
+	
+	// The interface defaults
+	
+	default Iterator<E> iterator(){
+		return new IndexedListIterator<E>(this);
+	}
 	
 	default void each(Action<E> action) {
 		
@@ -25,15 +46,9 @@ public interface IndexedList<E> {
 		return result;
 		
 	}
+
 	
-
-	int size();
-
-	IndexedList<E> add(E value);
-
-	E get(int index);
-
-	IndexedList<E> set(int index, E value);
+	
 	
 	default boolean isEmpty() {
 		return size()==0;
@@ -104,7 +119,34 @@ public interface IndexedList<E> {
 	}
 	
 	
+	//Implementing default Iterator for the Interface
 	
+	
+	
+	class IndexedListIterator<E> implements Iterator<E>{
+
+		IndexedList<E> list;
+		int count=0;
+		public IndexedListIterator(IndexedList<E> list) {
+			// TODO Auto-generated constructor stub
+			this.list=list;
+		}
+		
+		@Override
+		public boolean hasNext() {
+			// TODO Auto-generated method stub
+			return count<list.size();
+		}
+
+		@Override
+		public E next() {
+			// TODO Auto-generated method stub
+			if(!hasNext())
+				throw new NoSuchElementException();
+			return list.get(count++);
+		}
+	}
+
 	
 	
 	

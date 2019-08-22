@@ -6,7 +6,7 @@ import java.util.NoSuchElementException;
 import in.conceptarchitect.util.Action;
 
 public abstract class AbstractLinkedList<E> 
-		implements IndexedList<E>, Iterable<E> {
+		implements IndexedList<E> {
 	
 	@Override
 	public void each(Action<E> action) {
