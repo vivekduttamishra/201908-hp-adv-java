@@ -1,0 +1,5 @@
+Animal animal=new Tiger();
+
+animal.eat();
+
+animal.hunt();

@@ -1,14 +1,15 @@
 package in.conceptarchitect.util;
 
-import static org.junit.Assert.*;
+import static in.conceptarchitect.util.JUnitAsserts.assertListSequence;
+import static org.junit.Assert.assertEquals;
 
 import java.util.Iterator;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import in.conceptarchitect.util.collection.LinkedList;
-import static in.conceptarchitect.util.JUnitAsserts.*;
 public class PrimeTests {
 
 	@Before
@@ -29,7 +30,7 @@ public class PrimeTests {
 		
 	}
 	
-	@Test
+	@Ignore @Test
 	public void performanceMeasureForPrimesBetween2And500000() {
 		System.out.println("finding Primes between 2 and 500000...");
 		PerformanceResult<LinkedList<Integer>> result=
@@ -40,6 +41,8 @@ public class PrimeTests {
 		
 		
 	}
+	
+	
 	
 	@Test
 	public void canFind1000thPrimeEndingWith7() {
@@ -76,10 +79,10 @@ public class PrimeTests {
 	}
 	
 	
-	
-public void canFind1000thPrimeEndingWith7() {
+	@Test
+	public void canFind1000thPrimeEndingWith7UsingPrimeRange() {
 		
-		String message="1000th Prime Using PrimeUtils.primeRange";
+		String message="1000th Prime Using new PrimeRange()";
 		System.out.println(message);
 		PerformanceResult<Integer> result=Performance.measure(message, ()->{
 		
@@ -110,6 +113,27 @@ public void canFind1000thPrimeEndingWith7() {
 		System.out.println(result);
 		
 	}
+	
+	@Test
+	public void find1000thprimesEndingWith7() {
+		System.out.println("PrimeStream");
+		PerformanceResult<?> result= Performance.measure("PrimeStream", ()->{
+			
+			return   new PrimeRange(2, 500000)  //Iterable of all primes in range 2-500000
+							.stream()			//Stream of all primes in range 2-500000
+							.filter(n->n%10==7)  //Stream of all primes ending with 7
+							.skip(999)		     //Stream starting with 1000th item
+							.findFirst()		 //Terminal: Optional<Integer>
+							.get();				// Integer or null
+		});
+		
+		System.out.println(result);
+		
+		
+		
+	}
+	
+	
 	
 
 }
