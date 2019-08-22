@@ -1,4 +1,4 @@
-package in.conceptarchitect.util.collection;
+package in.conceptarchitect.util;
 
 public interface Action<T> {
 

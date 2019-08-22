@@ -1,4 +1,4 @@
-package in.conceptarchitect.util.collection;
+package in.conceptarchitect.util;
 
 @FunctionalInterface  //annotation suggests its a function interface [OPTIONAL]
 public interface Condition<T> {

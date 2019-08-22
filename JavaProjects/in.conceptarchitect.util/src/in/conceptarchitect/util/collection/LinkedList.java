@@ -1,6 +1,6 @@
 package in.conceptarchitect.util.collection;
 
-
+import java.util.Iterator;
 
 public class LinkedList<E> extends AbstractLinkedList<E>{
 
@@ -23,11 +23,13 @@ public class LinkedList<E> extends AbstractLinkedList<E>{
 		return this;
 	}	
 	
-	@Override
-	public boolean isEmpty() {
-		// TODO Auto-generated method stub
-		throw new RuntimeException("isEmpty is not supported");
-	}
+	
+	
+//	@Override
+//	public boolean isEmpty() {
+//		// TODO Auto-generated method stub
+//		throw new RuntimeException("isEmpty is not supported");
+//	}
 	
 
 }

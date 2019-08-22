@@ -12,7 +12,7 @@ public class ListExecuteTest {
 	@Test
 	public void canPrintAllListItem() {
 		
-		values.execute( value-> System.out.print(value+"\t"));
+		values.each( value-> System.out.print(value+"\t"));
 	}
 	
 	
@@ -21,7 +21,7 @@ public class ListExecuteTest {
 		
 		ElasticArray<Integer> array=new ElasticArray<Integer>(1);
 		
-		values.execute( value -> array.add(value));
+		values.each( value -> array.add(value));
 		
 		assertSequenceEquals(values, array);
 	}
@@ -32,7 +32,7 @@ public class ListExecuteTest {
 		
 		int []sum= {0};
 		
-		values.execute(value-> sum[0]+=value);
+		values.each(value-> sum[0]+=value);
 		
 		assertEquals(15, sum[0]);
 	}
@@ -44,7 +44,7 @@ public class ListExecuteTest {
 		
 		//values.execute( v -> System.out.println(v));
 		
-		values.execute(System.out::println);
+		values.each(System.out::println);
 		
 		
 		
@@ -57,7 +57,7 @@ public class ListExecuteTest {
 	}
 	@Test
 	public void canPrintInALine() {
-		values.execute(ListExecuteTest::printTab);
+		values.each(ListExecuteTest::printTab);
 	}
 	
 	

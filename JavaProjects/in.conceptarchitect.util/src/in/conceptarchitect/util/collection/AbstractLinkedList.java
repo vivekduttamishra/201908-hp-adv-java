@@ -1,11 +1,19 @@
 package in.conceptarchitect.util.collection;
 
-import javax.naming.OperationNotSupportedException;
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+
+import in.conceptarchitect.util.Action;
 
 public abstract class AbstractLinkedList<E> 
-		implements IndexedList<E> {
+		implements IndexedList<E>, Iterable<E> {
 	
-	
+	@Override
+	public void each(Action<E> action) {
+		
+		for(Node n=first;n!=null;n=n.next)
+			action.perform(n.value);
+	}
 	
 	class Node {
 	
@@ -86,7 +94,36 @@ public abstract class AbstractLinkedList<E>
 
 		return n.value;
 	}
+
 	
+	
+	@Override
+	public Iterator<E> iterator() {
+		// TODO Auto-generated method stub
+		return new MyIterator();
+	}
+	
+	class MyIterator implements Iterator<E>{
+
+		Node current=first;
+		
+		@Override
+		public boolean hasNext() {
+			// TODO Auto-generated method stub
+			return current!=null;
+		}
+
+		@Override
+		public E next() {
+			// TODO Auto-generated method stub
+			if(!hasNext())
+				throw new NoSuchElementException();
+			E value= current.value;
+			current=current.next;
+			return value;
+		}
+		
+	}
 	
 	
 	

@@ -1,6 +1,31 @@
 package in.conceptarchitect.util.collection;
 
+import in.conceptarchitect.util.Action;
+import in.conceptarchitect.util.Condition;
+
 public interface IndexedList<E> {
+	
+	default void each(Action<E> action) {
+		
+		for(int i=0;i<size();i++) {
+			E value=get(i);
+			action.perform(value);
+		}
+	}
+	
+	default LinkedList<E > search(Condition<E> condition){
+		
+		LinkedList<E> result=new LinkedList<>();
+
+		each( value ->{
+			if(condition.isTrue(value))
+				result.add(value);
+		});
+		
+		return result;
+		
+	}
+	
 
 	int size();
 
@@ -60,31 +85,8 @@ public interface IndexedList<E> {
 		return true;
 	}
 	
-	default LinkedList<E > search(Condition<E> condition){
-		
-		LinkedList<E> result=new LinkedList<>();
-		
-		//search the list for matching items
-		for(int i=0;i<size();i++) {
-			
-			E value=get(i);
-			if(condition.isTrue(value))
-				result.add(value);
-		
-			
-		}
-		
-		return result;
-		
-	}
 	
-	default void execute(Action<E> action) {
-		
-		for(int i=0;i<size();i++) {
-			E value=get(i);
-			action.perform(value);
-		}
-	}
+	
 	
 	
 	static <T> LinkedList<T> createLinkedList(T...values){
