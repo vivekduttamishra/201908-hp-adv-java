@@ -1,7 +1,11 @@
 package in.conceptarchitect.animalkingdom;
 
+
 public class Horse extends Mammal implements Rideable,Domestic {
 
+	
+	int age;
+	
 	@Override
 	public String eat() {
 		
@@ -9,7 +13,7 @@ public class Horse extends Mammal implements Rideable,Domestic {
 	}
 	
 	
-	
+	@SpecialBehavior
 	public String ride() {
 		return this+" is a great ancient ride";
 	}

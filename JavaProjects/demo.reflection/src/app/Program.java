@@ -1,5 +1,8 @@
 package app;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
 import in.conceptarchitect.animalkingdom.Animal;
 import in.conceptarchitect.animalkingdom.Camel;
 import in.conceptarchitect.animalkingdom.Cow;
@@ -13,10 +16,41 @@ import in.conceptarchitect.animalkingdom.Parrot;
 import in.conceptarchitect.animalkingdom.Rideable;
 import in.conceptarchitect.animalkingdom.Snake;
 import in.conceptarchitect.animalkingdom.Tiger;
+import in.conceptarchitect.reflect.Reflect;
 
 public class Program {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception{
+		//testTraditionalOO();
+		
+		BufferedReader reader=new BufferedReader(new InputStreamReader(System.in));
+		
+		
+		
+		//Class<?> cls=Horse.class;
+		
+		System.out.println("Enter the class name:");
+		String className= reader.readLine();
+		
+		if(!className.contains("."))
+			className="in.conceptarchitect.animalkingdom."+className;
+		
+		Class<?> cls= Class.forName(className);
+		
+		//String str= Reflect.info(cls);
+		
+		//System.out.println(str);
+		
+		//Reflect.invokeAll(cls);
+		
+		//Reflect.invokeSpecialBehaviors(cls);
+		
+		Reflect.invokeSpeciality(cls);
+		
+		
+	}
+
+	private static void testTraditionalOO() {
 		// TODO Auto-generated method stub
 		//Animal animal=new Tiger();
 		
@@ -58,8 +92,6 @@ public class Program {
 			System.out.println(animal.die());
 			System.out.println();
 		}
-		
-		
 	}
 
 }

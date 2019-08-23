@@ -6,6 +6,7 @@ public abstract class Bird extends Animal {
 		return fly();
 	}
 	
+	@SpecialBehavior
 	public String fly() {
 		return this+" fly";
 	}

@@ -7,7 +7,7 @@ public class Eagle extends Bird implements Hunter{
 		// TODO Auto-generated method stub
 		return this+" is flesheater";
 	}
-	
+	@SpecialBehavior
 	public String hunt() {
 		return this+" is a flying hunter";
 	}

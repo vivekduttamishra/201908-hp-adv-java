@@ -1,5 +1,6 @@
 package in.conceptarchitect.animalkingdom;
 
+@Speciality(name="humanSpeak")
 public class Parrot extends Bird implements Domestic{
 
 	@Override
@@ -8,6 +9,7 @@ public class Parrot extends Bird implements Domestic{
 		return this+" is fruitarian";
 	}
 	
+	@SpecialBehavior
 	public String humanSpeak() {
 		return this+" can speak in human tounge";
 	}

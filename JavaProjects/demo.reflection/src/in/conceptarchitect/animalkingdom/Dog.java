@@ -1,5 +1,6 @@
 package in.conceptarchitect.animalkingdom;
 
+@Speciality(name="fly")
 public class Dog extends Mammal implements Hunter,Domestic {
 
 	@Override

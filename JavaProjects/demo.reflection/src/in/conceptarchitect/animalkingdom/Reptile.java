@@ -10,6 +10,6 @@ public abstract class Reptile extends Animal implements Hunter{
 	public String eat() {
 		return this+" all flesheater";
 	}
-	
+	@SpecialBehavior
 	public abstract String hunt();
 }

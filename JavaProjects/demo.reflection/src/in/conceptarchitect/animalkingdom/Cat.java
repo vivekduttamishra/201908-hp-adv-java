@@ -7,7 +7,7 @@ public 	abstract class Cat extends Mammal implements Hunter{
 		
 		return this+" is flesheater: "+hunt();
 	}
-	
+	@SpecialBehavior
 	public String hunt() {
 		return this+" is a great hunter";
 	}
