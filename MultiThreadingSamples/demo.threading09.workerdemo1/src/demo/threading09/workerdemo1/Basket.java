@@ -5,13 +5,12 @@ public class Basket {
 
 	//TODO-1: Add Lock Code
 	
-	public  void addItem(){
-		
-		
+	public synchronized  void addItem(){
+		//synchronized(this) {
 			long item=items;
 			item++;
 			items=item;
-		
+		//}
 	}
 
 	public long getItems() {

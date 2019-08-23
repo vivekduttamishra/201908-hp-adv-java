@@ -30,8 +30,9 @@ public class Worker implements Runnable {
 		for(int i=0;i<itemsToAdd;i++){
 			
 			//Add Locks to Basket
-			
+			synchronized(basket) {
 				basket.addItem();
+			}
 			
 			
 			

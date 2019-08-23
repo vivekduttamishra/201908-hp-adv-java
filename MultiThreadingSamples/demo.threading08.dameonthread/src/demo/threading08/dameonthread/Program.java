@@ -17,7 +17,7 @@ public class Program {
 		Thread t3=new Thread(c3);
 		
 		//TODO: set t2 to a daemon thread
-		
+		t2.setDaemon(true);
 		
 		
 		//run the threads.
@@ -26,7 +26,9 @@ public class Program {
 		t3.start();
 
 		//GOAL-1: t3 stop midway after t1 and t2 finishes		
-			
+		ThreadUtils.waitFor(t1,t3); //wait for critical threads
+		
+		//let non-critical thread be killed
 		
 		//GOAL-2: This line should be the last to be printed
 		System.out.println("end of main program");

@@ -4,11 +4,9 @@ public class Basket {
 	long items;
 
 	public  void addItem(){
-		
 		long item=items;
 		item++;
 		items=item;
-	
 	}
 	
 	

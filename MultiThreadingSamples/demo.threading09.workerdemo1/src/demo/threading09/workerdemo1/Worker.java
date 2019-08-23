@@ -2,6 +2,16 @@ package demo.threading09.workerdemo1;
 
 import in.conceptarchitect.threading.ThreadUtils;
 
+/**
+ * Every Worker works independently (separte Thread)
+ * To add 'itemsToAdd' item in a
+ * Basket
+ * 
+ * Works may be using separte Baskets
+ * or may be sharing baskets
+ */
+
+
 public class Worker implements Runnable {
 
 	Thread thread;

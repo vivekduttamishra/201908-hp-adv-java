@@ -6,7 +6,7 @@ public class Counter implements Runnable {
 
 	Thread thread;
 	long count;
-	volatile boolean canRun;
+	
 
 	public long getCount() {		return count; 	}
 
@@ -30,7 +30,7 @@ public class Counter implements Runnable {
 	
 	public void waitFor(){ ThreadUtils.waitFor(thread);}
 	public void stop(){ canRun=false;}
-	
+	volatile boolean canRun;
 	@Override
 	public void run() {
 	
