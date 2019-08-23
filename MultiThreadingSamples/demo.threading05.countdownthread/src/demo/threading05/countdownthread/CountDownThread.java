@@ -4,15 +4,13 @@ import in.conceptarchitect.threading.ThreadUtils;
 
 //TODO: Convert This class To a Thread Class
 
-public class CountDownThread implements Runnable {
+public class CountDownThread extends Thread {
+	
+	private int max;
 
-	
-	
-	
 	@Override
 	public void run() {
-		// TODO Parameterize and remove Next Line of Code from here after
-		int max=10;
+		
 		
 		Thread me=Thread.currentThread();
 		//System.out.println("Thread #"+me.getId()+" starts...");
@@ -33,6 +31,11 @@ public class CountDownThread implements Runnable {
 		
 		
 
+	}
+
+	public CountDownThread(int max) {
+		super();
+		this.max = max;
 	}
 
 }

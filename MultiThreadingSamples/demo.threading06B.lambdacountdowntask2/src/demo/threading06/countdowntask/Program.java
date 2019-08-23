@@ -9,16 +9,19 @@ public class Program {
 		
 		// TODO:  Create thread to invoke below countDown methods 
 		
-		Thread t1=null;	//should count down from 200
-		Thread t2=null; //should count down from 100
+		Thread t1=new Thread(Program::quickCountDown);	//should using quickCountDown
+		
+		Thread t2=new Thread( () -> countDown(100)); //should count down from 100
 		
 		t1.start();
 		t2.start();
+		
 		System.out.println("end of main program");
-	
-	
 	}
-
+	
+	public static void quickCountDown() {
+		countDown(50);
+	}
 	
 	public static  void countDown(int max) {
 		

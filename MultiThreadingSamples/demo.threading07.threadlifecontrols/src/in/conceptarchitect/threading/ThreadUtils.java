@@ -10,5 +10,24 @@ public class ThreadUtils {
 		
 	}
 	
+	public static void sleep(int ms) {
+		try{
+			Thread.sleep(ms);
+		} catch(InterruptedException ex) {
+			throw new ThreadInterruptedException(ex.getMessage(),ex);
+		}
+	}
+
+	public static void waitFor(Thread ...threads) {
+		
+		try {
+			for(Thread thread : threads)
+				thread.join();
+		}catch(InterruptedException ex) {
+			throw new ThreadInterruptedException(ex.getMessage(),ex);
+		}
+		
+	}
+	
 	
 }

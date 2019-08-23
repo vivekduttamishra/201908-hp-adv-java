@@ -6,7 +6,7 @@ public class Program {
 	public static void main(String[] args) {
 		
 		
-		Thread thread=null;  //TODO: Get A Reference to The Current Thread
+		Thread thread=Thread.currentThread();  //TODO: Get A Reference to The Current Thread
 		
 		
 		System.out.println(thread);
